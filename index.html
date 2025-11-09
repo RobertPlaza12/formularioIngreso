@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Formulario de ingreso</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="card" role="application" aria-labelledby="form-title">
+    <header>
+      <h1 id="form-title">Solicitud de ingreso universitario</h1>
+      <div class="progressbar" aria-hidden="true"><div class="progress" id="progress"></div></div>
+    </header>
+    <div class="content">
+      <main>
+        <form id="multiForm" novalidate>
+          <!-- Paso 1: Datos personales ------------------------------------------------------------>
+            <section class="step" data-step="0" aria-labelledby="paso1">
+                <div class="field">
+                    <label for="jsonFile">Cargar datos (.JSON):</label>
+                    <input type="file" id="jsonFile" accept=".json">
+                </div>
+                <h2 id="paso1">Datos personales</h2>
+                <div class="row">
+                    <div style="flex:1" class="field">
+                        <label for="nombre">Nombre completo</label>
+                        <input id="nombre" name="nombre" type="text" required />
+                        <div class="error" data-for="nombre"></div>
+                    </div>
+                    <div style="width:150px" class="field">
+                        <label for="cedula">Cedula o Pasaporte</label>
+                        <input id="cedula" name="cedula" type="text" pattern="\d{6,20}" required />
+                        <div class="error" data-for="cedula"></div>
+                    </div>
+                    </div>
+
+                    <div class="row">
+                    <div style="flex:1" class="field">
+                        <label for="fecha_nac">Fecha de nacimiento</label>
+                        <input id="fecha_nac" name="fecha_nac" type="date" required />
+                        <div class="error" data-for="fecha_nac"></div>
+                    </div>
+                    <div style="width:180px" class="field">
+                        <label for="genero">Genero</label>
+                          <select id="genero" name="genero">
+                          <option value="">*Seleccionar</option>
+                          <option value="M">Masculino</option>
+                          <option value="F">Femenino</option>
+                          <option value="Otro">Otro o Prefiero no decir</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+          <!-- Paso 2: Contacto ---------------------------------------------------------------------->
+            <section class="step" data-step="1" aria-labelledby="paso2">
+                <h2 id="paso2">Informacion de contacto</h2>
+                <div class="field">
+                  <label for="email">Correo electronico</label>
+                  <input id="email" name="email" type="email" required />
+                  <div class="error" data-for="email"></div>
+                </div>
+                <div class="field">
+                  <label for="telefono">Telefono</label>
+                  <input id="telefono" name="telefono" type="tel" placeholder="Ej: +18095556666" />
+                  <div class="error" data-for="telefono"></div>
+                </div>
+                <div class="field">
+                  <label for="telefonoE">Telefono de emergencia</label>
+                  <input id="telefonoE" name="telefonoE" type="tel" placeholder="Ej: +18095556666" />
+                  <div class="error" data-for="telefono"></div>
+                </div>
+                <div class="field">
+                  <label for="direccion">Direccion</label>
+                  <input id="direccion" name="direccion" type="text" />
+                </div>
+            </section>
+
+          <!-- Paso 3: Académica ---------------------------------------------------------------------------------------->
+            <section class="step" data-step="2" aria-labelledby="paso3">
+                <h2 id="paso3">Información académica</h2>
+                <div class="field">
+                  <label for="programa">Programa a cursar</label>
+                  <select id="programa" name="programa">
+                      <option value="">*Seleccionar</option>
+                      <option>Lic. en Economia</option>
+                      <option>Lic. en Psicologia</option>
+                      <option>Lic. en Contabilidad</option>
+                      <option>Lic. en Administracion</option>
+                      <option>Lic. en Derecho</option>
+                      <option>Ing. Industrial</option>
+                      <option>Ing. Electronica</option>
+                      <option>Ing. Mecanica</option>
+                      <option>Ing. en Sistemas</option>
+                      <option>Ing. Civil</option>
+                      <option>Esp. en Matemática Aplicada</option>
+                      <option>Esp. en Ciencias Ambientales</option>
+                      <option>Esp. en Gerencia y Supervisión de Obras</option>
+                      <option>Maestria en Administración de Proyectos</option>
+                      <option>Maestria en Ciencia de Datos</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="institucion">Centro de procedencia</label>
+                  <input id="institucion" name="institucion" type="text" />
+                </div>
+                <div class="field">
+                  <label for="ingreso">Semestre de Ingreso</label>
+                  <select id="ingreso" name="ingreso">
+                      <option value="">*Seleccionar</option>
+                      <option>Primer semestre 2026</option>
+                      <option>Segundo semestre 2026</option>
+                      <option>Primer semestre 2027</option>
+                      <option>Segundo semestre 2027</option>
+                      <option>Primer semestre 2028</option>
+                      <option>Segundo semestre 2028</option>
+                      <option>Primer semestre 2029</option>
+                      <option>Segundo semestre 2029</option>
+                      <option>Primer semestre 2030</option>
+                      <option>Segundo semestre 2030</option>
+                      <option>Primer semestre 2031</option>
+                      <option>Segundo semestre 2031</option>
+                      <option>Primer semestre 2032</option>
+                      <option>Segundo semestre 2032</option>
+                      <option>Primer semestre 2033</option>
+                      <option>Segundo semestre 2033</option>
+                      <option>Primer semestre 2034</option>
+                      <option>Segundo semestre 2034</option>
+                      <option>Primer semestre 2035</option>
+                      <option>Segundo semestre 2035</option>
+                      <option>Primer semestre 2036</option>
+                      <option>Segundo semestre 2036</option>
+                      <option>Primer semestre 2037</option>
+                      <option>Segundo semestre 2037</option>
+                  </select>
+                </div>
+            </section>
+
+          <!-- Paso 4: Salud ---------------------------------------------------------------------------------------->
+            <section class="step" data-step="3" aria-labelledby="paso4">
+                <h2 id="paso4">Estado de salud</h2>
+                <p>Selecciona las condiciones que apliquen:</p>
+                <div class="field">
+                  <label><input type="checkbox" name="condiciones" value="asma"> Asma</label>
+                </div>
+                <div class="field">
+                  <label><input type="checkbox" name="condiciones" value="diabetes"> Diabetes</label>
+                </div>
+                <div class="field">
+                  <label><input type="checkbox" name="condiciones" value="alergias"> Alergias</label>
+                </div>
+                <div class="field">
+                  <label for="otra_salud">Otra (describe)</label>
+                  <textarea id="otra_salud" name="otra_salud"></textarea>
+                </div>
+            </section>
+
+          <!-- Paso 5: Confirmación ---------------------------------------------------------------------------->
+            <section class="step" data-step="4" aria-labelledby="paso5">
+                <h2 id="paso5">Confirmación</h2>
+                <p>Revisa tus datos antes de enviar. Si necesitas cambiar algo, vuelve atrás.</p>
+                <div class="summary" id="summaryBox" aria-live="polite"></div>
+            </section>
+
+          <div class="actions" role="group" aria-label="Controles del formulario">
+            <button type="button" class="secondary" id="prevBtn">Atrás</button>
+            <button type="button" id="nextBtn">Siguiente</button>
+            <button type="button" id="downloadJsonBtn" class="secondary">Descargar datos (.JSON)</button>
+            <button type="submit" id="submitBtn" style="display:none;">Enviar</button>
+          </div>
+        </form>
+      </main>
+      
+    </div>
+    <aside class="sidebar" aria-hidden="false">
+        <nav>
+          <ol class="steps" id="stepsList">
+            <li data-step="0"><span class="step-dot">1</span><span>Datos personales</span></li>
+            <li data-step="1"><span class="step-dot">2</span><span>Contactos</span></li>
+            <li data-step="2"><span class="step-dot">3</span><span>Información académica</span></li>
+            <li data-step="3"><span class="step-dot">4</span><span>Estado de salud</span></li>
+            <li data-step="4"><span class="step-dot">5</span><span>Confirmación</span></li>
+          </ol>
+        </nav>
+      </aside>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
