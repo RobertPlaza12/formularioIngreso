@@ -257,3 +257,4 @@ if (downloadBtn) {
 }
 
 mostrarPaso(paso);
+
